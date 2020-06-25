@@ -10,8 +10,6 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
     
-    // TODO: Animations : Directional idle
-    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,13 +21,10 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        //animator.SetFloat("Horizontal", movement.x); 
         animator.SetFloat("Horizontal", (movement != Vector2.zero ? movement.x : animator.GetFloat("Horizontal")));
-        //animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Vertical", (movement != Vector2.zero ? movement.y : animator.GetFloat("Vertical")));
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        //transform.localScale = new Vector2((movement.x >= 0? 1: -1), 1);
         transform.localScale = new Vector2((animator.GetFloat("Horizontal") < 0? -1 : 1), 1);
     }
 
