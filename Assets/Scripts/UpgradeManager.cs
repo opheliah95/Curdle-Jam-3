@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
 {
+    public int points;
+
     public AttributeDetails[] attDetails;
 
     public Material defaultMat;
@@ -23,17 +25,22 @@ public class UpgradeManager : MonoBehaviour
 
     public void Increment(string att)
     {
-        foreach(AttributeDetails attDetail in attDetails)
+        if (points > 0)
         {
-            if(attDetail.attName == att)
+            foreach (AttributeDetails attDetail in attDetails)
             {
-                if(attDetail.attValue < 4)
+                if (attDetail.attName == att)
                 {
-                    attDetail.attValue++;
-                    attDetail.nodes[attDetail.attValue].GetComponent<MeshRenderer>().material = redMat;
-                }
+                    if (attDetail.attValue < 4)
+                    {
+                        attDetail.attValue++;
+                        attDetail.nodes[attDetail.attValue].GetComponent<MeshRenderer>().material = redMat;
 
-                break;
+                        points--;
+                    }
+
+                    break;
+                }
             }
         }
     }
@@ -48,6 +55,8 @@ public class UpgradeManager : MonoBehaviour
                 {
                     attDetail.nodes[attDetail.attValue].GetComponent<MeshRenderer>().material = defaultMat;
                     attDetail.attValue--;
+
+                    points++;
                 }
 
                 break;

@@ -6,7 +6,7 @@ public class AttributeDetails : MonoBehaviour
 {
     public string attName;
     public int baseValue;
-    public int attValue = -1;
+    public int attValue;
     public GameObject[] nodes;
 
     public Material redMat;
