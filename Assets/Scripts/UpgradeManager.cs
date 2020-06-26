@@ -23,6 +23,19 @@ public class UpgradeManager : MonoBehaviour
         
     }
 
+    public int GetAttributeValue(string att)
+    {
+        foreach(AttributeDetails attDetail in attDetails)
+        {
+            if(attDetail.attName == att)
+            {
+                return attDetail.attValue;
+            }
+        }
+
+        return -1;
+    }
+
     public void Increment(string att)
     {
         if (points > 0)
