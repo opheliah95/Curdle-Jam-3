@@ -133,3 +133,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47eb864cafab1d748bfc682f6213d7b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {x: 0, y: 0}
+  range: 1
+  rangeMod: 1
+  speed: 1
+  speedMod: 2
+  startTime: 0
+  distance: {x: 0, y: 0}
+  distCovered: 0
+  journeyFraction: 0
