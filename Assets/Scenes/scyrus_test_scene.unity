@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &254007412
 Transform:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254007411}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -277,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &622833673
 Transform:
   m_ObjectHideFlags: 0
@@ -299,7 +299,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622833672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -538,9 +538,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87f0f6c2ebd7a6f42ab88598d72df7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasRock: 0
   isThrowing: 0
   isAttacking: 0
+  timer: 0
   cooldown: 0.25
+  colliderSide: {fileID: 254007413}
+  colliderUp: {fileID: 622833674}
+  colliderDown: {fileID: 1688927022}
   animator: {fileID: 0}
 --- !u!95 &1632952708
 Animator:
@@ -603,7 +608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1688927021
 Transform:
   m_ObjectHideFlags: 0
@@ -625,7 +630,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688927020}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -799,14 +804,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089526268}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87f0f6c2ebd7a6f42ab88598d72df7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasRock: 0
   isThrowing: 0
   isAttacking: 0
+  timer: 0
   cooldown: 0.25
+  colliderSide: {fileID: 0}
+  colliderUp: {fileID: 0}
+  colliderDown: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &2089526272
 MonoBehaviour:

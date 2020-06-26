@@ -5,12 +5,22 @@ using UnityEngine;
 public class PlayerViolence : MonoBehaviour
 {
     // TODO: Pull stats from Rock - swing speed, aoe, throw area, throw speed
-    // TODO: Fill in that skeleton
+    // TODO: Implement hasRock checks
+    // TODO: Implement throwing animations
     // TODO: Animations and timers
+    // TODO: Collider selection (facing direction)
+    // TODO: Conditions for changing state (in animator?)
+    // TODO: Add collision/trigger script to colliders to splat things/register hit
 
+    public bool hasRock;
     public bool isThrowing;
     public bool isAttacking;
+    public float timer = 0;
     public float cooldown = 0.25f;
+    
+    public Collider2D colliderSide;
+    public Collider2D colliderUp;
+    public Collider2D colliderDown;
 
     public Animator animator;
 
@@ -26,7 +36,7 @@ public class PlayerViolence : MonoBehaviour
         // Single click because you can't spam-throw
         if (Input.GetMouseButtonDown(1))
         {
-            RockThrow();
+            
         }
         // LMB
         // Down for repeated swinging
@@ -42,18 +52,7 @@ public class PlayerViolence : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Using input
-        // Eh...animator handles?
         animator.SetBool("IsAttacking", isAttacking);
-    }
-
-    void RockThrow()
-    {
-        print("I throw the stone.");
-    }
-
-    void RockSmash()
-    {
-        print("Swing and a....");
+        colliderSide.enabled = isAttacking;
     }
 }
