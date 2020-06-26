@@ -67,4 +67,6 @@ crashlytics-build.properties
 
 # ignore all test files  --Oph
 /[Aa]ssets/TestSprites/*
+/[Aa]ssets/TestSprites.meta
 /[Aa]ssets/TestAnimation/*
+/[Aa]ssets/TestAnimation.meta
