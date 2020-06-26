@@ -44,7 +44,7 @@ public class PlayerViolence : MonoBehaviour
         {
             isAttacking = true;
         }
-        if (Input.GetMouseButtonUp(0))
+        else
         {
             isAttacking = false;
         }
@@ -54,5 +54,15 @@ public class PlayerViolence : MonoBehaviour
     {
         animator.SetBool("IsAttacking", isAttacking);
         colliderSide.enabled = isAttacking;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        print("I am slain.");
+        Animator otherAnimator = other.GetComponent<Animator>();
+        if (otherAnimator)
+        {
+            otherAnimator.Play("Enemy_Explode");
+        }
     }
 }
