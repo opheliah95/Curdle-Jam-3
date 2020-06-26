@@ -5,42 +5,65 @@ using UnityEngine;
 public class PlayerViolence : MonoBehaviour
 {
     // TODO: Pull stats from Rock - swing speed, aoe, throw area, throw speed
-    // TODO: Fill in that skeleton
+    // TODO: Implement hasRock checks
+    // TODO: Implement throwing animations
     // TODO: Animations and timers
+    // TODO: Conditions for changing state (in animator?)
+    // TODO: Add collision/trigger script to colliders to splat things/register hit
+    // TODO: Bugfix: jank on diagonal movement; if direction is diagonal, will sometimes attack in the direction you're not facing
+    // TODO: Animation jank; Bottlenecked by art assets
 
+    public bool hasRock;
     public bool isThrowing;
-    public bool isSwinging;
+    public bool isAttacking;
+    public float timer = 0;
     public float cooldown = 0.25f;
-    
+
+    public Collider2D rockSmashCollider;
+
+    public Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();    
+    }
+
     void Update()
     {
         // Input
-        // LMB
-        // Single click because you can't spam-throw
-        if (Input.GetMouseButtonDown(0))
-        {
-            RockThrow();
-        }
         // RMB
-        // Down for repeated swinging
-        if (Input.GetMouseButton(1))
+        // Single click because you can't spam-throw
+        if (Input.GetMouseButtonDown(1))
         {
-            RockSmash();
+            
+        }
+        // LMB
+        // Down for repeated swinging
+        if (Input.GetMouseButton(0))
+        {
+            isAttacking = true;
+        }
+        else
+        {
+            isAttacking = false;
         }
     }
 
     private void FixedUpdate()
     {
-        // Using input
+        animator.SetBool("IsAttacking", isAttacking);
+        // handled in animator
+        //rockSmashCollider.enabled = isAttacking;
     }
 
-    void RockThrow()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        print("I throw the stone.");
-    }
-
-    void RockSmash()
-    {
-        print("Swing and a....");
+        // TODO: Handle in mob script
+        print("I am slain.");
+        Animator otherAnimator = other.GetComponent<Animator>();
+        if (otherAnimator)
+        {
+            otherAnimator.Play("Enemy_Explode");
+        }
     }
 }
