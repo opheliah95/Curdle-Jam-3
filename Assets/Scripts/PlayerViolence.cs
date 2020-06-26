@@ -8,19 +8,18 @@ public class PlayerViolence : MonoBehaviour
     // TODO: Implement hasRock checks
     // TODO: Implement throwing animations
     // TODO: Animations and timers
-    // TODO: Collider selection (facing direction)
     // TODO: Conditions for changing state (in animator?)
     // TODO: Add collision/trigger script to colliders to splat things/register hit
+    // TODO: Bugfix: jank on diagonal movement; if direction is diagonal, will sometimes attack in the direction you're not facing
+    // TODO: Animation jank; Bottlenecked by art assets
 
     public bool hasRock;
     public bool isThrowing;
     public bool isAttacking;
     public float timer = 0;
     public float cooldown = 0.25f;
-    
-    public Collider2D colliderSide;
-    public Collider2D colliderUp;
-    public Collider2D colliderDown;
+
+    public Collider2D rockSmashCollider;
 
     public Animator animator;
 
@@ -44,7 +43,7 @@ public class PlayerViolence : MonoBehaviour
         {
             isAttacking = true;
         }
-        if (Input.GetMouseButtonUp(0))
+        else
         {
             isAttacking = false;
         }
@@ -53,6 +52,18 @@ public class PlayerViolence : MonoBehaviour
     private void FixedUpdate()
     {
         animator.SetBool("IsAttacking", isAttacking);
-        colliderSide.enabled = isAttacking;
+        // handled in animator
+        //rockSmashCollider.enabled = isAttacking;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // TODO: Handle in mob script
+        print("I am slain.");
+        Animator otherAnimator = other.GetComponent<Animator>();
+        if (otherAnimator)
+        {
+            otherAnimator.Play("Enemy_Explode");
+        }
     }
 }
