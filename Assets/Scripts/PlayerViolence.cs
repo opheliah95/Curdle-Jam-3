@@ -8,8 +8,6 @@ public class PlayerViolence : MonoBehaviour
     // TODO: Implement hasRock checks
     // TODO: Implement throwing animations
     // TODO: Animations and timers
-    // TODO: Conditions for changing state (in animator?)
-    // TODO: Add collision/trigger script to colliders to splat things/register hit
     // TODO: Bugfix: jank on diagonal movement; if direction is diagonal, will sometimes attack in the direction you're not facing
     // TODO: Animation jank; Bottlenecked by art assets
 
