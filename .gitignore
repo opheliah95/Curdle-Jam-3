@@ -64,6 +64,7 @@ crashlytics-build.properties
 
 # Sample stuff no one else needs - scyrus
 /Assets/SampleAssets/*
+/Assets/SampleAssets.meta
 
 # ignore all test files  --Oph
 /[Aa]ssets/TestSprites/*
