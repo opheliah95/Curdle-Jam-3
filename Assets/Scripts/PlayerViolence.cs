@@ -28,30 +28,38 @@ public class PlayerViolence : MonoBehaviour
 
     void Update()
     {
-        // Input
-        // RMB
-        // Single click because you can't spam-throw
-        if (Input.GetMouseButtonDown(1))
+        if (hasRock)
         {
-            
-        }
-        // LMB
-        // Down for repeated swinging
-        if (Input.GetMouseButton(0))
-        {
-            isAttacking = true;
-        }
-        else
-        {
-            isAttacking = false;
+            // There's gotta be a simpler way, but fuck it, mad at git, can't be bothered.
+
+            // Input
+            // RMB
+            // Single click because you can't spam-throw
+            // Also throw will take precedence.
+            if (Input.GetMouseButtonDown(1))
+            {
+                isThrowing = true;
+                isAttacking = false;
+            }
+            // LMB
+            // Down for repeated swinging
+            else if (Input.GetMouseButton(0))
+            {
+                isAttacking = true;
+                isThrowing = false;
+            }
+            else
+            {
+                isAttacking = false;
+                isThrowing = false;
+            }
         }
     }
 
     private void FixedUpdate()
     {
+        animator.SetBool("IsThrowing", isThrowing);
         animator.SetBool("IsAttacking", isAttacking);
-        // handled in animator
-        //rockSmashCollider.enabled = isAttacking;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
