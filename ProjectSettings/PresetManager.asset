@@ -13,3 +13,6 @@ PresetManager:
     - m_Preset: {fileID: 2655988077585873504, guid: 5c8d3680ae7f25041a53cb188f8e36f7,
         type: 2}
       m_Filter: 
+    - m_Preset: {fileID: 2655988077585873504, guid: f9e1db8a45adcaa4b945d88769aa995f,
+        type: 2}
+      m_Filter: SPR_
