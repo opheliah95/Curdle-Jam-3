@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerViolence : MonoBehaviour
 {
     // TODO: Pull stats from Rock - swing speed, aoe, throw area, throw speed
-    // TODO: Implement hasRock checks
     // TODO: Implement throwing animations
     // TODO: Animations and timers
     // TODO: Bugfix: jank on diagonal movement; if direction is diagonal, will sometimes attack in the direction you're not facing
@@ -13,6 +12,7 @@ public class PlayerViolence : MonoBehaviour
     // TODO: Rockless attack attempts
     // TODO: Pick up rock
     // TODO: Offset rock's start pos based on sprite + anim
+    // TODO: Animation triggers only activate at certain point
 
     public bool hasRock;
     public bool isThrowing;
