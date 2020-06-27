@@ -15,6 +15,8 @@ public class PlayerViolence : MonoBehaviour
     // TODO: Animation triggers only activate at certain point
     // TODO: Layers to differentiate between 
 
+    public GameObject aRock;
+
     public bool hasRock;
     public bool isThrowing;
     public bool isAttacking;

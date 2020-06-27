@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class LevelingNode : MonoBehaviour
 {
+    public UpgradeManager upgradeManager;
+
     public string attribute;
     public bool increments;
-    public UpgradeManager upgradeManager;
+    public Sprite empty;
+    public Sprite filled;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +26,8 @@ public class LevelingNode : MonoBehaviour
     private void OnMouseUp()
     {
         if (increments)
-            upgradeManager.Increment(attribute);
+            upgradeManager.Increment(attribute, filled);
         else
-            upgradeManager.Decrement(attribute);
+            upgradeManager.Decrement(attribute, empty);
     }
 }

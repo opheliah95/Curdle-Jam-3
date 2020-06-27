@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AttributeDetails : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class AttributeDetails : MonoBehaviour
     public int attValue;
     public GameObject[] nodes;
 
-    public Material redMat;
+    public Sprite filled;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class AttributeDetails : MonoBehaviour
         {
             for(int i = 0; i < baseValue; i++)
             {
-                nodes[i].GetComponent<MeshRenderer>().material = redMat;
+                nodes[i].GetComponent<Image>().sprite = filled;
             }
         }
     }
