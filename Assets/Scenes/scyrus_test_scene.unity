@@ -441,12 +441,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6bde7afd371aaf4c8d7b6c94eca6409, type: 3}
---- !u!1 &2013323773 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9218082230070266101, guid: b4d5a60511c84694f9aad6c5232835e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2860382605109654401}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2860382605109654401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -454,16 +448,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 95134625498839534, guid: b4d5a60511c84694f9aad6c5232835e4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 2860382606700089858, guid: b4d5a60511c84694f9aad6c5232835e4,
-        type: 3}
-      propertyPath: rockReleasePoint
-      value: 
-      objectReference: {fileID: 2013323773}
     - target: {fileID: 2860382606700089859, guid: b4d5a60511c84694f9aad6c5232835e4,
         type: 3}
       propertyPath: m_LocalPosition.x

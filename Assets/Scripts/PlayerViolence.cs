@@ -67,7 +67,7 @@ public class PlayerViolence : MonoBehaviour
         animator.SetBool("IsThrowing", isThrowing);
         if (isThrowing)
         {
-            //hasRock = false;
+            hasRock = false;
             isAttacking = false;
             isThrowing = false;
             GameObject thrown = GameObject.Instantiate(rock);
