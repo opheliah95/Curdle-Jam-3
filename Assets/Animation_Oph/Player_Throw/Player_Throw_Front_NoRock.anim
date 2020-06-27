@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_Throw_Back_WithRock
+  m_Name: Player_Throw_Front_NoRock
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -6550812316089255194, guid: 6819b32b6d1009242b3dda7dea360501,
+      value: {fileID: -7133039632789056482, guid: fd3f80f77e8cf5e4dac3888dab999837,
         type: 3}
     - time: 0.083333336
-      value: {fileID: -557625964466800641, guid: 6819b32b6d1009242b3dda7dea360501,
+      value: {fileID: 3065471368852993782, guid: fd3f80f77e8cf5e4dac3888dab999837,
         type: 3}
     - time: 0.16666667
-      value: {fileID: 333907969992920936, guid: 6819b32b6d1009242b3dda7dea360501,
+      value: {fileID: -2656556712800384991, guid: fd3f80f77e8cf5e4dac3888dab999837,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -47,9 +47,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -6550812316089255194, guid: 6819b32b6d1009242b3dda7dea360501, type: 3}
-    - {fileID: -557625964466800641, guid: 6819b32b6d1009242b3dda7dea360501, type: 3}
-    - {fileID: 333907969992920936, guid: 6819b32b6d1009242b3dda7dea360501, type: 3}
+    - {fileID: -7133039632789056482, guid: fd3f80f77e8cf5e4dac3888dab999837, type: 3}
+    - {fileID: 3065471368852993782, guid: fd3f80f77e8cf5e4dac3888dab999837, type: 3}
+    - {fileID: -2656556712800384991, guid: fd3f80f77e8cf5e4dac3888dab999837, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
