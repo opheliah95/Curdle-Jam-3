@@ -1,15 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeManager : MonoBehaviour
 {
     public int points;
 
     public AttributeDetails[] attDetails;
-
-    public Material defaultMat;
-    public Material redMat;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +34,7 @@ public class UpgradeManager : MonoBehaviour
         return -1;
     }
 
-    public void Increment(string att)
+    public void Increment(string att, Sprite s)
     {
         if (points > 0)
         {
@@ -47,7 +45,7 @@ public class UpgradeManager : MonoBehaviour
                     if (attDetail.attValue < 4)
                     {
                         attDetail.attValue++;
-                        attDetail.nodes[attDetail.attValue].GetComponent<MeshRenderer>().material = redMat;
+                        attDetail.nodes[attDetail.attValue].GetComponent<Image>().sprite = s;
 
                         points--;
                     }
@@ -58,7 +56,7 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    public void Decrement(string att)
+    public void Decrement(string att, Sprite s)
     {
         foreach (AttributeDetails attDetail in attDetails)
         {
@@ -66,7 +64,7 @@ public class UpgradeManager : MonoBehaviour
             {
                 if (attDetail.attValue > attDetail.baseValue - 1)
                 {
-                    attDetail.nodes[attDetail.attValue].GetComponent<MeshRenderer>().material = defaultMat;
+                    attDetail.nodes[attDetail.attValue].GetComponent<Image>().sprite = s;
                     attDetail.attValue--;
 
                     points++;

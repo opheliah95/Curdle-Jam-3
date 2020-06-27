@@ -13,6 +13,8 @@ public class PlayerViolence : MonoBehaviour
     // TODO: Bugfix: jank on diagonal movement; if direction is diagonal, will sometimes attack in the direction you're not facing
     // TODO: Animation jank; Bottlenecked by art assets
 
+    public GameObject aRock;
+
     public bool hasRock;
     public bool isThrowing;
     public bool isAttacking;
@@ -35,7 +37,7 @@ public class PlayerViolence : MonoBehaviour
         // Single click because you can't spam-throw
         if (Input.GetMouseButtonDown(1))
         {
-            
+            GameObject.Instantiate(aRock, transform.position, new Quaternion(1, 1, 1, 1));
         }
         // LMB
         // Down for repeated swinging
