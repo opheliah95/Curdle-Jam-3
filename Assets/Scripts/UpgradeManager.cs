@@ -18,7 +18,12 @@ public class UpgradeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject childObject = transform.GetChild(0).gameObject;
+
+            childObject.SetActive(childObject.activeSelf ? false : true);
+        }
     }
 
     public int GetAttributeValue(string att)
