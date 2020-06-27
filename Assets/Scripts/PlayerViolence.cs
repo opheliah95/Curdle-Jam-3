@@ -13,12 +13,14 @@ public class PlayerViolence : MonoBehaviour
     // TODO: Pick up rock
     // TODO: Offset rock's start pos based on sprite + anim
     // TODO: Animation triggers only activate at certain point
-    // TODO: Layers to differentiate between 
+    // TODO: Layers to differentiate between objects
+    // TODO: Jank with using melee + throw at same time 
 
     public GameObject aRock;
 
     public bool hasRock;
     public bool isThrowing;
+    public bool isReleased;
     public bool isAttacking;
     public float timer = 0;
     public float cooldown = 0.25f;
@@ -68,7 +70,7 @@ public class PlayerViolence : MonoBehaviour
     private void FixedUpdate()
     {
         animator.SetBool("IsThrowing", isThrowing);
-        if (isThrowing)
+        if (isReleased && hasRock)
         {
             hasRock = false;
             isAttacking = false;
