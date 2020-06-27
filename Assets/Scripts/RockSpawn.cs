@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class RockSpawn : MonoBehaviour
 {
+    // TODO: Direction, diag
+    // TODO: Ignore player until stop
+    // TODO: Release position based on size
+
     public UpgradeManager upgradeManager;
     public Rigidbody2D rb;
 
     public Vector2 movement;
     
     int size;
+    public float sizeMod;
     public int range;
     public float rangeMod;
     public int speed;
@@ -25,14 +30,15 @@ public class RockSpawn : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //upgradeManager = FindObjectOfType<UpgradeManager>();
+        upgradeManager = FindObjectOfType<UpgradeManager>();
 
-        size = 1; // upgradeManager.GetAttributeValue("size") + 1;
-        range = 1; // upgradeManager.GetAttributeValue("range") + 1;
-        speed = 1; // upgradeManager.GetAttributeValue("speed") + 1;
+        size = upgradeManager.GetAttributeValue("size") + 1;
+        range = upgradeManager.GetAttributeValue("range") + 1;
+        speed = upgradeManager.GetAttributeValue("speed") + 1;
 
         startTime = Time.fixedTime;
         distance = rb.position + (movement * (range * rangeMod));
+        gameObject.transform.localScale *= (size * sizeMod);
     }
 
     // Update is called once per frame
