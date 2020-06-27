@@ -15,6 +15,7 @@ public class PlayerViolence : MonoBehaviour
     // TODO: Animation triggers only activate at certain point
     // TODO: Layers to differentiate between objects
     // TODO: Jank with using melee + throw at same time 
+    // TODO: Update enemy prefabs to work with this trigger
 
     public GameObject aRock;
 

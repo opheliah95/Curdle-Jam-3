@@ -7,6 +7,7 @@ public class RockSpawn : MonoBehaviour
     // TODO: Direction, diag
     // TODO: Ignore player until stop
     // TODO: Release position based on size
+    // TODO: [RED] Bezier curve the throws
 
     public UpgradeManager upgradeManager;
     public Rigidbody2D rb;
