@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 1902905151}
   - component: {fileID: 1902905155}
   - component: {fileID: 1902905154}
+  - component: {fileID: 1902905156}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -309,7 +310,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.4375, y: 0.9375}
+  m_Size: {x: 0.875, y: 1.875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -366,6 +367,25 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   direction: {x: 0, y: 0}
   rb: {fileID: 0}
+  animator: {fileID: 0}
+--- !u!114 &1902905156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902905150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f0f6c2ebd7a6f42ab88598d72df7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasRock: 0
+  isThrowing: 0
+  isAttacking: 0
+  timer: 0
+  cooldown: 0.25
+  rockSmashCollider: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1001 &1028413526335963065
 PrefabInstance:
