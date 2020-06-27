@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player_Walk_Down
+  m_Name: Player_Walk_Up_Rock
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -2701929475316138687, guid: 80494d509fbe0284ca411c499b98a83b,
+      value: {fileID: -8587050814486229977, guid: 0890593d8bf457f48b900e1d95a736f4,
         type: 3}
     - time: 0.16666667
-      value: {fileID: 6199753937802795879, guid: 80494d509fbe0284ca411c499b98a83b,
+      value: {fileID: -4438183008024144259, guid: 0890593d8bf457f48b900e1d95a736f4,
         type: 3}
     - time: 0.33333334
-      value: {fileID: 4212056933550668272, guid: 80494d509fbe0284ca411c499b98a83b,
+      value: {fileID: -2617167001151305388, guid: 0890593d8bf457f48b900e1d95a736f4,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -47,9 +47,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -2701929475316138687, guid: 80494d509fbe0284ca411c499b98a83b, type: 3}
-    - {fileID: 6199753937802795879, guid: 80494d509fbe0284ca411c499b98a83b, type: 3}
-    - {fileID: 4212056933550668272, guid: 80494d509fbe0284ca411c499b98a83b, type: 3}
+    - {fileID: -8587050814486229977, guid: 0890593d8bf457f48b900e1d95a736f4, type: 3}
+    - {fileID: -4438183008024144259, guid: 0890593d8bf457f48b900e1d95a736f4, type: 3}
+    - {fileID: -2617167001151305388, guid: 0890593d8bf457f48b900e1d95a736f4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
