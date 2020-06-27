@@ -52,13 +52,18 @@ public class RockSpawn : MonoBehaviour
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)
-    private void OnTriggerEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
+        GameObject other = collider.gameObject;
         // Check for animal collision
 
         // Check for obstacle collision
 
         // Check for player collision (ie pick up)
-
+        if (other.name == "Player")
+        {
+            other.GetComponent<PlayerViolence>().hasRock = true;
+            Destroy(this.gameObject);
+        }
     }
 }
