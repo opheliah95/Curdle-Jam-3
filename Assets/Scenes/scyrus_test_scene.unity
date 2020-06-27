@@ -367,122 +367,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1019009928
+--- !u!1001 &872600232
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1569689197}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157321, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
+        type: 3}
+      propertyPath: m_Name
+      value: Upgrade Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797633819074157321, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243408, guid: 5983daa5cbc9a13459ca830d03066d29,
+    - target: {fileID: 8797633819074157324, guid: e6bde7afd371aaf4c8d7b6c94eca6409,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243409, guid: 5983daa5cbc9a13459ca830d03066d29,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -150915086199348981, guid: f1d63b5855aea13498346bb9b3e060c2,
-        type: 3}
-    - target: {fileID: 5049408585032243409, guid: 5983daa5cbc9a13459ca830d03066d29,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243409, guid: 5983daa5cbc9a13459ca830d03066d29,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243409, guid: 5983daa5cbc9a13459ca830d03066d29,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243420, guid: 5983daa5cbc9a13459ca830d03066d29,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243421, guid: 5983daa5cbc9a13459ca830d03066d29,
-        type: 3}
-      propertyPath: m_Name
-      value: Rock
-      objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243421, guid: 5983daa5cbc9a13459ca830d03066d29,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243422, guid: 5983daa5cbc9a13459ca830d03066d29,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5049408585032243422, guid: 5983daa5cbc9a13459ca830d03066d29,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5983daa5cbc9a13459ca830d03066d29, type: 3}
---- !u!4 &1569689197 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2860382606700089859, guid: b4d5a60511c84694f9aad6c5232835e4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2860382605109654401}
-  m_PrefabAsset: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: e6bde7afd371aaf4c8d7b6c94eca6409, type: 3}
 --- !u!1001 &2860382605109654401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -515,6 +473,12 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 87232204167979207, guid: e7c5566294da58c48b919730dfc3a519,
+        type: 3}
+    - target: {fileID: 2860382606700089858, guid: b4d5a60511c84694f9aad6c5232835e4,
+        type: 3}
+      propertyPath: rock
+      value: 
+      objectReference: {fileID: 5049408585032243421, guid: 5983daa5cbc9a13459ca830d03066d29,
         type: 3}
     - target: {fileID: 2860382606700089859, guid: b4d5a60511c84694f9aad6c5232835e4,
         type: 3}

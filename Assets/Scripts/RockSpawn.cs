@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RockSpawn : MonoBehaviour
 {
-    UpgradeManager upgradeManager;
-    Rigidbody2D rb;
+    public UpgradeManager upgradeManager;
+    public Rigidbody2D rb;
 
     public Vector2 movement;
     
@@ -25,11 +25,11 @@ public class RockSpawn : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        upgradeManager = FindObjectOfType<UpgradeManager>();
+        //upgradeManager = FindObjectOfType<UpgradeManager>();
 
-        size = upgradeManager.GetAttributeValue("size") + 1;
-        range = upgradeManager.GetAttributeValue("range") + 1;
-        speed = upgradeManager.GetAttributeValue("speed") + 1;
+        size = 1; // upgradeManager.GetAttributeValue("size") + 1;
+        range = 1; // upgradeManager.GetAttributeValue("range") + 1;
+        speed = 1; // upgradeManager.GetAttributeValue("speed") + 1;
 
         startTime = Time.fixedTime;
         distance = rb.position + (movement * (range * rangeMod));
@@ -45,7 +45,7 @@ public class RockSpawn : MonoBehaviour
     }
 
     // Call this after instantiating
-    public void Thrown(Vector3 startPos, Vector2 dir)
+    public void Thrown(Vector2 startPos, Vector2 dir)
     {
         rb.position = startPos;
         movement = dir;
