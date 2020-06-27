@@ -51,10 +51,14 @@ public class RockSpawn : MonoBehaviour
         movement = dir;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    //private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collision2D other)
     {
         // Check for animal collision
 
         // Check for obstacle collision
+
+        // Check for player collision (ie pick up)
+
     }
 }

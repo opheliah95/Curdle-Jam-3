@@ -13,6 +13,7 @@ public class PlayerViolence : MonoBehaviour
     // TODO: Pick up rock
     // TODO: Offset rock's start pos based on sprite + anim
     // TODO: Animation triggers only activate at certain point
+    // TODO: Layers to differentiate between 
 
     public bool hasRock;
     public bool isThrowing;
@@ -76,9 +77,8 @@ public class PlayerViolence : MonoBehaviour
             Vector2 dir = pm.direction;
             thrown.GetComponent<RockSpawn>().Thrown(pos, dir);
         }
-
-
         animator.SetBool("IsAttacking", isAttacking);
+        animator.SetBool("HasRock", hasRock);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
