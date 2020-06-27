@@ -12,7 +12,9 @@ public class UpgradeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Object.DontDestroyOnLoad(gameObject);
+
+        GetComponent<Canvas>().worldCamera = Camera.main;
     }
 
     // Update is called once per frame
