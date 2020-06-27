@@ -73,15 +73,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -150915086199348981, guid: f1d63b5855aea13498346bb9b3e060c2,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &5049408585032243422
@@ -92,7 +93,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5049408585032243421}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -120,7 +121,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.25
 --- !u!114 &5049408585032243420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,3 +134,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47eb864cafab1d748bfc682f6213d7b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeManager: {fileID: 0}
+  rb: {fileID: 5049408585032243422}
+  movement: {x: 0, y: 0}
+  range: 1
+  rangeMod: 1
+  speed: 1
+  speedMod: 2
+  startTime: 0
+  distance: {x: 0, y: 0}
+  distCovered: 0
+  journeyFraction: 0
