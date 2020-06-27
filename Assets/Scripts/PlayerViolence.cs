@@ -23,6 +23,7 @@ public class PlayerViolence : MonoBehaviour
     public GameObject rock;
     // public Collider2D rockSmashCollider;
     public PlayerMovement pm;
+    public GameObject rockReleasePoint;
 
     public Animator animator;
 
@@ -66,11 +67,12 @@ public class PlayerViolence : MonoBehaviour
         animator.SetBool("IsThrowing", isThrowing);
         if (isThrowing)
         {
-            hasRock = false;
+            //hasRock = false;
             isAttacking = false;
             isThrowing = false;
             GameObject thrown = GameObject.Instantiate(rock);
-            Vector2 pos = transform.position;
+            //Vector2 pos = transform.position;
+            Vector2 pos = rockReleasePoint.transform.position;
             Vector2 dir = pm.direction;
             thrown.GetComponent<RockSpawn>().Thrown(pos, dir);
         }
