@@ -85,7 +85,7 @@ public class PlayerViolence : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // TODO: Handle in mob script
-        print("I am slain.");
+        
         Animator otherAnimator = other.GetComponent<Animator>();
         if (otherAnimator)
         {
