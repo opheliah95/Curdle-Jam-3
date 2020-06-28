@@ -57,7 +57,7 @@ public class PlayerViolence : MonoBehaviour
                 //isAttacking = false;
             }
             // LMB
-            else if (Input.GetMouseButtonDown(0) && hasRock)
+            else if (Input.GetMouseButton(0) && hasRock) // can spam attacks but breaks audio in some cases...
             {
                 isAttacking = true;
                 isThrowing = false;
