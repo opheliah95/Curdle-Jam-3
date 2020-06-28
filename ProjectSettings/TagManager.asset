@@ -47,3 +47,6 @@ TagManager:
   - name: Player
     uniqueID: 2937855769
     locked: 0
+  - name: Rock
+    uniqueID: 2967624573
+    locked: 0
