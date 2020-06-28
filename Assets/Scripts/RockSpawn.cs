@@ -17,7 +17,8 @@ public class RockSpawn : MonoBehaviour
     int size;
     public float sizeMod;
     public int range;
-    public float rangeMod;
+    public float rangeModVert;
+    public float rangeModHoriz;
     public int speed;
     public float speedMod;
     
@@ -27,19 +28,23 @@ public class RockSpawn : MonoBehaviour
     public float distCovered;
     public float journeyFraction;
 
+    public PlayerMovement pm;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         upgradeManager = FindObjectOfType<UpgradeManager>();
+        pm = FindObjectOfType<PlayerMovement>();
+        float dir = (Mathf.Abs(pm.direction.x) > Mathf.Abs(pm.direction.y)? rangeModHoriz : rangeModVert);
 
         size = upgradeManager.GetAttributeValue("size") + 1;
         range = upgradeManager.GetAttributeValue("range") + 1;
         speed = upgradeManager.GetAttributeValue("speed") + 1;
 
         startTime = Time.fixedTime;
-        distance = rb.position + (movement * (range * rangeMod));
         gameObject.transform.localScale *= (size * sizeMod);
+        distance = rb.position + (movement * (range * dir));
     }
 
     // Update is called once per frame
