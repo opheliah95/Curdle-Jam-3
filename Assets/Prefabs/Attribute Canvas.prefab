@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92b4470160c99b4288933fd29a0e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 5
+  points: 0
   experience: 0
   attDetails:
   - {fileID: 6588554045570558434}
