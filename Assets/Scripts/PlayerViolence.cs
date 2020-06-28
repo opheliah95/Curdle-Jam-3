@@ -93,13 +93,11 @@ public class PlayerViolence : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         AudioManager.Instance.PlayPlayerSFX("Rock_Hit");
-        AudioManager.Instance.PlayMiscSFX("Rock_Hit");
         if (other.tag == "Respawn")
         {
             Animator otherAnimator = other.GetComponent<Animator>();
             if (otherAnimator)
             {
-                AudioManager.Instance.PlayPlayerSFX("Blood_Flow");
                 AudioManager.Instance.PlayMiscSFX("Blood_Flow");
                 otherAnimator.Play("Enemy_Explode");
             }
