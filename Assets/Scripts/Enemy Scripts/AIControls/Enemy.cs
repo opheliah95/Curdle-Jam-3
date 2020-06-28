@@ -23,16 +23,17 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     bool isEscaping = false;
 
-    protected void Start()
+    protected virtual void Start()
     {
         playerTransform = FindObjectOfType<PlayerMovement>().transform;
         startingPos = transform.position;
         roamingPos = randomMovement();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         Escape();
+        GetComponent<Animator>().SetBool("playerDetected", isEscaping);
         if (!isEscaping)
         {
             moveToPosition(roamingPos, speed);
@@ -68,13 +69,13 @@ public class Enemy : MonoBehaviour
 
     // enemy will move in random directions
     // fine tune so that enemy only move in one direction
-    protected Vector3 randomMovement()
+    protected virtual Vector3 randomMovement()
     {
-        return Util.GetSingleDir() + startingPos;
+        return Util.GetRandomSingleDir() + startingPos;
 
     }
 
-    public void moveToPosition(Vector3 pos, float movingSpeed)
+    public virtual void moveToPosition(Vector3 pos, float movingSpeed)
     {
         float step = movingSpeed * Time.deltaTime;
         // move sprite towards the target location
@@ -92,7 +93,7 @@ public class Enemy : MonoBehaviour
     }
 
     // check escape
-    public void Escape()
+    public virtual void Escape()
     {
         Vector3 playerPos = playerTransform.position;
 
