@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMainTheme()
     {
+        backgroundMusic.Stop();
         backgroundMusic.clip = (AudioClip)Resources.Load("Audio/BG_Main_Theme");
         backgroundMusic.Play();
     }
