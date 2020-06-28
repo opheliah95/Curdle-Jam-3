@@ -59,6 +59,7 @@ public class UpgradeManager : MonoBehaviour
 
         if(experience == 3)
         {
+            AudioManager.Instance.PlayMiscSFX("Blood_meter_filled_level_up");
             points++;
             UpdatePointDisplay();
             experience = 0;
