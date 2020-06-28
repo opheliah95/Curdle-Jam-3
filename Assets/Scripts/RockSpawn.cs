@@ -93,7 +93,7 @@ public class RockSpawn : MonoBehaviour
             UpgradeManager.Instance.GainExperience(1);
             other.GetComponent<Animator>().Play("Enemy_Explode");
         }
-        else
+        else if (other.name != "Player")
         {
             // ie obstacles
             hasStopped = true;
