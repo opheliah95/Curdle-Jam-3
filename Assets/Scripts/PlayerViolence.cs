@@ -84,12 +84,13 @@ public class PlayerViolence : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // TODO: Handle in mob script
-        
-        Animator otherAnimator = other.GetComponent<Animator>();
-        if (otherAnimator)
+        if (other.tag == "Respawn")
         {
-            otherAnimator.Play("Enemy_Explode");
+            Animator otherAnimator = other.GetComponent<Animator>();
+            if (otherAnimator)
+            {
+                otherAnimator.Play("Enemy_Explode");
+            }
         }
     }
 }

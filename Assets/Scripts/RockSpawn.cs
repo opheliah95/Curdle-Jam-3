@@ -74,18 +74,22 @@ public class RockSpawn : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         GameObject other = collider.gameObject;
-        // Check for animal collision
-        if (other.tag == "Respawn")
-        {
-            other.GetComponent<Animator>().Play("Enemy_Explode");
-        }
-        // Check for obstacle collision
-
         // Check for player collision (ie pick up)
         if (other.name == "Player" && hasStopped)
         {
             other.GetComponent<PlayerViolence>().hasRock = true;
             Destroy(this.gameObject);
         }
+        // Check for animal collision
+        if (other.tag == "Respawn")
+        {
+            other.GetComponent<Animator>().Play("Enemy_Explode");
+        }
+        else
+        {
+            // ie obstacles
+            hasStopped = true;
+        }
+
     }
 }
