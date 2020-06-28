@@ -44,11 +44,13 @@ public class AudioManager : MonoBehaviour
     public void PlayPlayerSFX(string audioFile)
     {
         playerSFX.clip = (AudioClip)Resources.Load("Audio/" + audioFile);
+        playerSFX.Play();
     }
 
     public void PlayMiscSFX(string audioFile)
     {
         miscSFX.clip = (AudioClip)Resources.Load("Audio/" + audioFile);
+        miscSFX.Play();
     }
 
     // Start is called before the first frame update

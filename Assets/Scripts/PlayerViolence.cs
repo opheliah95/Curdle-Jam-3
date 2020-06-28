@@ -32,11 +32,13 @@ public class PlayerViolence : MonoBehaviour
     public GameObject rockReleasePoint;
 
     public Animator animator;
+    //public AudioManager am;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         pm = GetComponent<PlayerMovement>();
+       // am = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -55,7 +57,7 @@ public class PlayerViolence : MonoBehaviour
                 //isAttacking = false;
             }
             // LMB
-            else if (Input.GetMouseButton(0))
+            else if (Input.GetMouseButtonDown(0) && hasRock)
             {
                 isAttacking = true;
                 isThrowing = false;
@@ -79,16 +81,26 @@ public class PlayerViolence : MonoBehaviour
             GameObject thrown = GameObject.Instantiate(rock, rockReleasePoint.transform.position, new Quaternion(0,0,0,0));
         }
         animator.SetBool("IsAttacking", isAttacking);
+
+        if (isAttacking)
+        {
+            AudioManager.Instance.PlayPlayerSFX("Rock_Melee_No_Hit");
+        }
+
         animator.SetBool("HasRock", hasRock);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        AudioManager.Instance.PlayPlayerSFX("Rock_Hit");
+        AudioManager.Instance.PlayMiscSFX("Rock_Hit");
         if (other.tag == "Respawn")
         {
             Animator otherAnimator = other.GetComponent<Animator>();
             if (otherAnimator)
             {
+                AudioManager.Instance.PlayPlayerSFX("Blood_Flow");
+                AudioManager.Instance.PlayMiscSFX("Blood_Flow");
                 otherAnimator.Play("Enemy_Explode");
             }
         }
