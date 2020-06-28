@@ -12,17 +12,19 @@ public class Enemy : MonoBehaviour
     public float speed = 2f, escapingSpeed = 10f, escapingRadius = 20f;
 
     [SerializeField]
-    Vector3 startingPos;
+    protected Vector3 startingPos;
     [SerializeField]
-    Vector3 roamingPos;
+    protected Vector3 roamingPos;
 
     public Transform playerTransform;
 
     [SerializeField]
-    bool flipLeft = false;
+    public bool flipLeft = false;
     [SerializeField]
-    bool isEscaping = false;
+    protected bool isEscaping = false;
 
+    [SerializeField]
+    protected float distance;
     protected virtual void Start()
     {
         playerTransform = FindObjectOfType<PlayerMovement>().transform;
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        distance = Util.GetRoundedDistance(transform.position, playerTransform.position);
         Escape();
         GetComponent<Animator>().SetBool("playerDetected", isEscaping);
         if (!isEscaping)
@@ -71,7 +74,7 @@ public class Enemy : MonoBehaviour
     // fine tune so that enemy only move in one direction
     protected virtual Vector3 randomMovement()
     {
-        return Util.GetRandomSingleDir() + startingPos;
+        return Util.GetRandomDir() + startingPos;
 
     }
 
@@ -88,8 +91,6 @@ public class Enemy : MonoBehaviour
         }
 
         // flip sprites ---up/down
-
-        Debug.Log("moving");
     }
 
     // check escape
@@ -98,11 +99,8 @@ public class Enemy : MonoBehaviour
         Vector3 playerPos = playerTransform.position;
 
         // check if player in radius
-        if ((Vector3.Distance(transform.position, playerPos) < detectionRadius) && !isEscaping)
+        if (Util.GetRoundedDistance(transform.position, playerPos) <= detectionRadius && !isEscaping)
         {
-            Vector3 dirToPlayer = transform.position - playerPos;
-            Vector3 newPos = dirToPlayer.normalized * escapingRadius + transform.position;
-            moveToPosition(newPos, escapingSpeed);
             isEscaping = true;
         }
         else
@@ -122,4 +120,28 @@ public class Enemy : MonoBehaviour
         transform.localScale = theScale;
 
     }
+    /*
+    protected virtual void EscapeImplementation()
+    {
+        Debug.Log("escaping");
+        Vector3 dirToPlayer = transform.position - playerPos;
+        Vector3 newPos = dirToPlayer * escapingRadius + transform.position;
+        Debug.Log("New pos is: " + newPos);
+        moveToPosition(newPos, escapingSpeed);
+        isEscaping = true;
+
+    }
+    */
+
+    public void assignFacingDirection()
+    {
+        if (flipLeft)
+            transform.localScale = new Vector2(-1, 1);
+        else
+            transform.localScale = new Vector2(1, 1);
+
+        Debug.Log("sorted");
+    }
+
+    
 }

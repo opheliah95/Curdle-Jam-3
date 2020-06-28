@@ -710,6 +710,7 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   flipLeft: 0
   isEscaping: 0
+  distance: 0
 --- !u!1 &1603388611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,7 +2831,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010129094, y: 0.14180613}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5668782, y: 0.21631204}
@@ -2841,7 +2842,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5}
+  m_Size: {x: 0.6694211, y: 0.60864735}
   m_EdgeRadius: 0
 --- !u!212 &522542292268617759
 SpriteRenderer:
@@ -3128,7 +3129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6655019676889995396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -1.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3185,15 +3186,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53829e5a0f9b36c40b1fa261d1b60e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 2.83
+  detectionRadius: 2
   speed: 2
   escapingSpeed: 10
-  escapingRadius: 100
+  escapingRadius: 5
   startingPos: {x: 0, y: 0, z: 0}
   roamingPos: {x: 0, y: 0, z: 0}
   playerTransform: {fileID: 0}
   flipLeft: 0
   isEscaping: 0
+  distance: 0
 --- !u!1001 &7958362122684487499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3214,7 +3216,7 @@ PrefabInstance:
     - target: {fileID: 7958362121096181449, guid: cc7a33354006fc34587b4455c52178f1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.67
       objectReference: {fileID: 0}
     - target: {fileID: 7958362121096181449, guid: cc7a33354006fc34587b4455c52178f1,
         type: 3}

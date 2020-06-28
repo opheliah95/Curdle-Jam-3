@@ -28,6 +28,13 @@ namespace MyUtil
         {
             return Vector3.right * Random.Range(-1f, 1f);
         }
+
+        public static float GetRoundedDistance(Vector3 a, Vector3 b)
+        {
+            return Mathf.Floor(Vector3.Distance(a, b));
+        }
+
+        
     }
 
 
