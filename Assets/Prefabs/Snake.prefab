@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1028413525395662433}
   m_Layer: 0
   m_Name: Snake
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ Animator:
   m_GameObject: {fileID: 1028413525395662445}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: aa1b9ecac9ddd1849b136ae800f70e61, type: 2}
+  m_Controller: {fileID: 9100000, guid: 019124622220b194eb04865100c289d9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

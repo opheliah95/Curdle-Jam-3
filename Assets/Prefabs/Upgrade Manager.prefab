@@ -46,13 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92b4470160c99b4288933fd29a0e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 4
+  points: 0
+  experience: 0
   attDetails:
   - {fileID: 8797633819074157322}
   - {fileID: 8797633819074157325}
   - {fileID: 8797633819074157326}
-  defaultMat: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  redMat: {fileID: 2100000, guid: 7084c8762848e4c4f97ba5b16524c845, type: 2}
 --- !u!114 &8797633819074157322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +73,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  redMat: {fileID: 2100000, guid: 7084c8762848e4c4f97ba5b16524c845, type: 2}
+  filled: {fileID: 0}
 --- !u!114 &8797633819074157325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +95,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  redMat: {fileID: 2100000, guid: 7084c8762848e4c4f97ba5b16524c845, type: 2}
+  filled: {fileID: 0}
 --- !u!114 &8797633819074157326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,4 +117,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  redMat: {fileID: 2100000, guid: 7084c8762848e4c4f97ba5b16524c845, type: 2}
+  filled: {fileID: 0}

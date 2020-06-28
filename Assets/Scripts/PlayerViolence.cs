@@ -32,11 +32,13 @@ public class PlayerViolence : MonoBehaviour
     public GameObject rockReleasePoint;
 
     public Animator animator;
+    //public AudioManager am;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
         pm = GetComponent<PlayerMovement>();
+       // am = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -55,7 +57,7 @@ public class PlayerViolence : MonoBehaviour
                 //isAttacking = false;
             }
             // LMB
-            else if (Input.GetMouseButton(0))
+            else if (Input.GetMouseButtonDown(0) && hasRock)
             {
                 isAttacking = true;
                 isThrowing = false;
@@ -76,20 +78,31 @@ public class PlayerViolence : MonoBehaviour
             hasRock = false;
             isAttacking = false;
             isThrowing = false;
-            GameObject thrown = GameObject.Instantiate(rock, rockReleasePoint.transform.position, new Quaternion(0,0,0,0));
+            GameObject thrown = GameObject.Instantiate(rock, rockReleasePoint.transform.position + new Vector3(0, UpgradeManager.Instance.GetAttributeValue("size") * 0.2f, 0)
+                , new Quaternion(0,0,0,0));
         }
         animator.SetBool("IsAttacking", isAttacking);
+
+        if (isAttacking)
+        {
+            AudioManager.Instance.PlayPlayerSFX("Rock_Melee_No_Hit");
+        }
+
         animator.SetBool("HasRock", hasRock);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // TODO: Handle in mob script
-        print("I am slain.");
-        Animator otherAnimator = other.GetComponent<Animator>();
-        if (otherAnimator)
+        AudioManager.Instance.PlayPlayerSFX("Rock_Hit");
+        if (other.tag == "Respawn")
         {
-            otherAnimator.Play("Enemy_Explode");
+            UpgradeManager.Instance.GainExperience(1);
+            Animator otherAnimator = other.GetComponent<Animator>();
+            if (otherAnimator)
+            {
+                AudioManager.Instance.PlayMiscSFX("Blood_Flow");
+                otherAnimator.Play("Enemy_Explode");
+            }
         }
     }
 }

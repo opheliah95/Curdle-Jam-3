@@ -52,6 +52,8 @@ public class RockSpawn : MonoBehaviour
 
         startTime = Time.fixedTime;
         gameObject.transform.localScale *= (size * sizeMod);
+
+        AudioManager.Instance.PlayPlayerSFX("Rock_Ranged");
     }
 
     // Update is called once per frame
@@ -74,18 +76,28 @@ public class RockSpawn : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         GameObject other = collider.gameObject;
-        // Check for animal collision
-        if (other.tag == "Respawn")
-        {
-            other.GetComponent<Animator>().Play("Enemy_Explode");
-        }
-        // Check for obstacle collision
-
         // Check for player collision (ie pick up)
         if (other.name == "Player" && hasStopped)
         {
             other.GetComponent<PlayerViolence>().hasRock = true;
             Destroy(this.gameObject);
         }
+        else
+        {
+            AudioManager.Instance.PlayMiscSFX("Rock_Hit");
+        }
+        // Check for animal collision
+        if (other.tag == "Respawn")
+        {
+            AudioManager.Instance.PlayMiscSFX("Blood_Flow");
+            UpgradeManager.Instance.GainExperience(1);
+            other.GetComponent<Animator>().Play("Enemy_Explode");
+        }
+        else
+        {
+            // ie obstacles
+            hasStopped = true;
+        }
+
     }
 }

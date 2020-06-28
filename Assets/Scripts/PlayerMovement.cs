@@ -9,8 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     public Animator animator;
-    
-    // TODO: Give up like a bitch and have a facing vector
 
     private void Start()
     {
