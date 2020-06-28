@@ -3801,7 +3801,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Kill both birds...
 
-    If you failed...go home and start again'
+    If you failed...return home to rest'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8053b5581e8a0fb479e7e60d53d8e11a, type: 2}
   m_sharedMaterial: {fileID: -6215022431225674756, guid: 8053b5581e8a0fb479e7e60d53d8e11a,
@@ -3830,7 +3830,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
+  m_fontSize: 32.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3871,10 +3871,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1653325278}
-    characterCount: 58
+    characterCount: 54
     spriteCount: 0
-    spaceCount: 9
-    wordCount: 11
+    spaceCount: 8
+    wordCount: 10
     linkCount: 0
     lineCount: 2
     pageCount: 1
