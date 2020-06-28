@@ -54,7 +54,6 @@ public class RockSpawn : MonoBehaviour
         gameObject.transform.localScale *= (size * sizeMod);
 
         AudioManager.Instance.PlayPlayerSFX("Rock_Ranged");
-        AudioManager.Instance.PlayMiscSFX("Rock_Ranged");
     }
 
     // Update is called once per frame
@@ -85,14 +84,13 @@ public class RockSpawn : MonoBehaviour
         }
         else
         {
-            AudioManager.Instance.PlayPlayerSFX("Rock_Hit");
             AudioManager.Instance.PlayMiscSFX("Rock_Hit");
         }
         // Check for animal collision
         if (other.tag == "Respawn")
         {
-            AudioManager.Instance.PlayPlayerSFX("Blood_Flow");
             AudioManager.Instance.PlayMiscSFX("Blood_Flow");
+            UpgradeManager.Instance.GainExperience(1);
             other.GetComponent<Animator>().Play("Enemy_Explode");
         }
         else

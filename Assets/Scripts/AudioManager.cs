@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource backgroundMusic;
     public AudioSource playerSFX;
     public AudioSource miscSFX;
+    public AudioSource uiSFX;
 
     public static AudioManager Instance
     {
@@ -45,6 +46,12 @@ public class AudioManager : MonoBehaviour
     {
         playerSFX.clip = (AudioClip)Resources.Load("Audio/" + audioFile);
         playerSFX.Play();
+    }
+
+    public void PlayUISFX(string audioFile)
+    {
+        uiSFX.clip = (AudioClip)Resources.Load("Audio/" + audioFile);
+        uiSFX.Play();
     }
 
     public void PlayMiscSFX(string audioFile)

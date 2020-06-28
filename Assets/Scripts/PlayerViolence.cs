@@ -78,7 +78,8 @@ public class PlayerViolence : MonoBehaviour
             hasRock = false;
             isAttacking = false;
             isThrowing = false;
-            GameObject thrown = GameObject.Instantiate(rock, rockReleasePoint.transform.position, new Quaternion(0,0,0,0));
+            GameObject thrown = GameObject.Instantiate(rock, rockReleasePoint.transform.position + new Vector3(0, UpgradeManager.Instance.GetAttributeValue("size") * 0.2f, 0)
+                , new Quaternion(0,0,0,0));
         }
         animator.SetBool("IsAttacking", isAttacking);
 
@@ -95,6 +96,7 @@ public class PlayerViolence : MonoBehaviour
         AudioManager.Instance.PlayPlayerSFX("Rock_Hit");
         if (other.tag == "Respawn")
         {
+            UpgradeManager.Instance.GainExperience(1);
             Animator otherAnimator = other.GetComponent<Animator>();
             if (otherAnimator)
             {
