@@ -683,6 +683,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6bde7afd371aaf4c8d7b6c94eca6409, type: 3}
+--- !u!1 &1235174733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8890878824382663580, guid: 204a778e078a03a4bb59694471804c09,
+    type: 3}
+  m_PrefabInstance: {fileID: 5205798631371748554}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1235174738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235174733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692587790c61e1942ac64b402f302d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 5
+  speed: 2
+  escapingSpeed: 10
+  escapingRadius: 5
+  startingPos: {x: 0, y: 0, z: 0}
+  roamingPos: {x: 0, y: 0, z: 0}
+  playerTransform: {fileID: 0}
+  flipLeft: 0
+  isEscaping: 0
 --- !u!1 &1603388611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,6 +2901,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2340094443754242823, guid: 204a778e078a03a4bb59694471804c09,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2032682559
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340094443754242823, guid: 204a778e078a03a4bb59694471804c09,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2462566851366574920, guid: 204a778e078a03a4bb59694471804c09,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
@@ -2908,6 +2945,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Worm
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890878824382663580, guid: 204a778e078a03a4bb59694471804c09,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8969558373130107462, guid: 204a778e078a03a4bb59694471804c09,
         type: 3}
@@ -3144,12 +3186,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53829e5a0f9b36c40b1fa261d1b60e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRadius: 2
+  detectionRadius: 2.83
   speed: 2
-  escapingRadius: 5
+  escapingSpeed: 10
+  escapingRadius: 100
   startingPos: {x: 0, y: 0, z: 0}
   roamingPos: {x: 0, y: 0, z: 0}
   playerTransform: {fileID: 0}
+  flipLeft: 0
+  isEscaping: 0
 --- !u!1001 &7958362122684487499
 PrefabInstance:
   m_ObjectHideFlags: 0

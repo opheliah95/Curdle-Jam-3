@@ -96,26 +96,20 @@ public class Enemy : MonoBehaviour
     {
         Vector3 playerPos = playerTransform.position;
 
-
         // check if player in radius
-        if ((Vector3.Distance(transform.position, playerPos) < detectionRadius))
+        if ((Vector3.Distance(transform.position, playerPos) < detectionRadius) && !isEscaping)
         {
-          
             Vector3 dirToPlayer = transform.position - playerPos;
             Vector3 newPos = dirToPlayer.normalized * escapingRadius + transform.position;
             moveToPosition(newPos, escapingSpeed);
             isEscaping = true;
-
         }
         else
         {
             isEscaping = false;
             return;
-        
         }
-        
 
-        
     }
 
     // check if enemy is stuck in wall
