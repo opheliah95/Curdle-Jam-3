@@ -75,7 +75,10 @@ public class RockSpawn : MonoBehaviour
     {
         GameObject other = collider.gameObject;
         // Check for animal collision
-
+        if (other.tag == "Respawn")
+        {
+            other.GetComponent<Animator>().Play("Enemy_Explode");
+        }
         // Check for obstacle collision
 
         // Check for player collision (ie pick up)
