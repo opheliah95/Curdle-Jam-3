@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     Vector3 roamingPos;
 
     public Transform playerTransform;
+
+    [SerializeField]
+    bool flipLeft = false;
+
     protected void Start()
     {
         playerTransform = FindObjectOfType<PlayerMovement>().transform;
@@ -57,9 +61,10 @@ public class Enemy : MonoBehaviour
     }
 
     // enemy will move in random directions
+    // fine tune so that enemy only move in one direction
     protected Vector3 randomMovement()
     {
-        return MyUtil.Util.GetRandomDir() + startingPos;
+        return MyUtil.Util.GetSingleDir() + startingPos;
 
     }
 
@@ -68,8 +73,16 @@ public class Enemy : MonoBehaviour
         float step = speed * Time.deltaTime;
         // move sprite towards the target location
         transform.position = Vector2.MoveTowards(transform.position, pos, step);
+
+        // flip sprite
+        if ((pos.x < 0 && !flipLeft) || (pos.x > 0 && flipLeft))
+        {
+            flipEnemySide();
+        }
+
     }
 
+    // check escape
     public bool Escape()
     {
         Vector3 playerPos = playerTransform.position;
@@ -88,5 +101,13 @@ public class Enemy : MonoBehaviour
         return false;
     }
 
+    // check if enemy is stuck in wall
+    public virtual void flipEnemySide()
+    {
+        flipLeft = !flipLeft;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
 
+    }
 }
