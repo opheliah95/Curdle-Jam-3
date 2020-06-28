@@ -10,6 +10,7 @@ public class RockSpawn : MonoBehaviour
     public Vector2 movement;
     
     int size;
+    public float sizeMod;
     public int range;
     public float rangeMod;
     public int speed;
@@ -21,37 +22,55 @@ public class RockSpawn : MonoBehaviour
     public float distCovered;
     public float journeyFraction;
 
+    PlayerViolence pv;
+
+    bool hasStopped;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //upgradeManager = FindObjectOfType<UpgradeManager>();
+        upgradeManager = FindObjectOfType<UpgradeManager>();
 
-        size = 1; // upgradeManager.GetAttributeValue("size") + 1;
-        range = 1; // upgradeManager.GetAttributeValue("range") + 1;
-        speed = 1; // upgradeManager.GetAttributeValue("speed") + 1;
+        pv = FindObjectOfType<PlayerViolence>();
+        movement = pv.pm.direction;
+        
+        size = upgradeManager.GetAttributeValue("size") + 1;
+        range = upgradeManager.GetAttributeValue("range") + 3;
+        speed = upgradeManager.GetAttributeValue("speed") + 1;
+
+        if (movement.x != 0)
+        {
+            movement = new Vector2(movement.x * range * rangeMod, -1.96f);
+            distance = rb.position + (movement);
+        }
+        else
+        {
+            distance = rb.position + (movement * (range * rangeMod));
+            distance.y -= 1.96f;
+        }
 
         startTime = Time.fixedTime;
-        distance = rb.position + (movement * (range * rangeMod));
+        gameObject.transform.localScale *= (size * sizeMod);
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        distCovered = (Time.fixedTime - startTime) * (speed * speedMod);
-        journeyFraction = distCovered / Vector2.Distance(rb.position, distance);
+        if (!hasStopped)
+        {
+            distCovered = (Time.fixedTime - startTime) * (speed * speedMod);
+            journeyFraction = distCovered / Vector2.Distance(rb.position, distance);
+            if (journeyFraction == Mathf.Infinity)
+            {
+                hasStopped = true;
+                GetComponent<SpriteRenderer>().sortingOrder = -1;
+            }
 
-        rb.position = Vector2.Lerp(rb.position, distance, journeyFraction);
+            rb.position = Vector2.Lerp(rb.position, distance, journeyFraction);
+        }
     }
 
-    // Call this after instantiating
-    public void Thrown(Vector2 startPos, Vector2 dir)
-    {
-        rb.position = startPos;
-        movement = dir;
-    }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
     private void OnTriggerEnter2D(Collider2D collider)
     {
         GameObject other = collider.gameObject;
@@ -60,7 +79,7 @@ public class RockSpawn : MonoBehaviour
         // Check for obstacle collision
 
         // Check for player collision (ie pick up)
-        if (other.name == "Player")
+        if (other.name == "Player" && hasStopped)
         {
             other.GetComponent<PlayerViolence>().hasRock = true;
             Destroy(this.gameObject);
