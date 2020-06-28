@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Enemy
+    uniqueID: 2032682559
+    locked: 0
+  - name: Player
+    uniqueID: 2937855769
+    locked: 0
+  - name: Rock
+    uniqueID: 2967624573
+    locked: 0
