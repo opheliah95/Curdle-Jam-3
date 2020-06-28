@@ -34,12 +34,11 @@ public class RockSpawn : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         upgradeManager = FindObjectOfType<UpgradeManager>();
-        //playerDirection = FindObjectOfType<PlayerMovement>().direction;
-        // ew
+
         pv = FindObjectOfType<PlayerViolence>();
         movement = pv.pm.direction;
 
-        transform.position = rb.position = pv.rockReleasePoint.transform.position;
+        //transform.position = rb.position = pv.rockReleasePoint.transform.position;
 
         size = upgradeManager.GetAttributeValue("size") + 1;
         range = upgradeManager.GetAttributeValue("range") + 1;
