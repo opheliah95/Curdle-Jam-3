@@ -139,12 +139,10 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   sizeMod: 1
   range: 1
-  rangeModVert: 1
-  rangeModHoriz: 4
+  rangeMod: 4
   speed: 1
   speedMod: 2
   startTime: 0
   distance: {x: 0, y: 0}
   distCovered: 0
   journeyFraction: 0
-  pm: {fileID: 0}

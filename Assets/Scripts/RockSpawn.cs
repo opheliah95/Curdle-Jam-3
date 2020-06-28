@@ -17,8 +17,7 @@ public class RockSpawn : MonoBehaviour
     int size;
     public float sizeMod;
     public int range;
-    public float rangeModVert;
-    public float rangeModHoriz;
+    public float rangeMod;
     public int speed;
     public float speedMod;
     
@@ -28,15 +27,19 @@ public class RockSpawn : MonoBehaviour
     public float distCovered;
     public float journeyFraction;
 
-    public PlayerMovement pm;
+    PlayerViolence pv;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         upgradeManager = FindObjectOfType<UpgradeManager>();
-        pm = FindObjectOfType<PlayerMovement>();
-        float dir = (Mathf.Abs(pm.direction.x) > Mathf.Abs(pm.direction.y)? rangeModHoriz : rangeModVert);
+        //playerDirection = FindObjectOfType<PlayerMovement>().direction;
+        // ew
+        pv = FindObjectOfType<PlayerViolence>();
+        movement = pv.pm.direction;
+
+        transform.position = rb.position = pv.rockReleasePoint.transform.position;
 
         size = upgradeManager.GetAttributeValue("size") + 1;
         range = upgradeManager.GetAttributeValue("range") + 1;
@@ -44,7 +47,7 @@ public class RockSpawn : MonoBehaviour
 
         startTime = Time.fixedTime;
         gameObject.transform.localScale *= (size * sizeMod);
-        distance = rb.position + (movement * (range * dir));
+        distance = rb.position + (movement * (range * rangeMod));
     }
 
     // Update is called once per frame
@@ -57,11 +60,11 @@ public class RockSpawn : MonoBehaviour
     }
 
     // Call this after instantiating
-    public void Thrown(Vector2 startPos, Vector2 dir)
-    {
-        rb.position = startPos;
-        movement = dir;
-    }
+    //public void Thrown(Vector2 startPos, Vector2 dir)
+    //{
+      //  rb.position = startPos;
+      //movement = dir;
+    //}
 
     //private void OnCollisionEnter2D(Collision2D collision)
     private void OnTriggerEnter2D(Collider2D collider)
@@ -75,7 +78,7 @@ public class RockSpawn : MonoBehaviour
         if (other.name == "Player")
         {
             other.GetComponent<PlayerViolence>().hasRock = true;
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 }

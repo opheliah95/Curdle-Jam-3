@@ -76,11 +76,7 @@ public class PlayerViolence : MonoBehaviour
             hasRock = false;
             isAttacking = false;
             isThrowing = false;
-            GameObject thrown = GameObject.Instantiate(rock);
-            //Vector2 pos = transform.position;
-            Vector2 pos = rockReleasePoint.transform.position;
-            Vector2 dir = pm.direction;
-            thrown.GetComponent<RockSpawn>().Thrown(pos, dir);
+            GameObject thrown = GameObject.Instantiate(rock, rockReleasePoint.transform.position, new Quaternion(0,0,0,0));
         }
         animator.SetBool("IsAttacking", isAttacking);
         animator.SetBool("HasRock", hasRock);
