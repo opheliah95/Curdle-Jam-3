@@ -29,6 +29,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayMainTheme()
+    {
+        backgroundMusic.clip = (AudioClip)Resources.Load("Audio/BG_Main_Theme");
+        backgroundMusic.Play();
+    }
+
+    public void PlayMenuTheme()
+    {
+        backgroundMusic.clip = (AudioClip)Resources.Load("Audio/BG_Menu_Theme");
+        backgroundMusic.Play();
+    }
+
     public void PlayPlayerSFX(string audioFile)
     {
         playerSFX.clip = (AudioClip)Resources.Load("Audio/" + audioFile);
@@ -42,7 +54,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        backgroundMusic.Play();
+        PlayMenuTheme();
     }
 
     // Update is called once per frame

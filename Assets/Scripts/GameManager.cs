@@ -41,5 +41,6 @@ public class GameManager : MonoBehaviour
     public void LoadTown()
     {
         SceneManager.LoadScene(1);
+        AudioManager.Instance.PlayMainTheme();
     }
 }
